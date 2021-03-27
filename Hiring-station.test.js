@@ -1,5 +1,5 @@
 const HiringStation = require("./Hiring-station");
-const Scooter = require("./scooters");
+const { Scooter, MScooter, EScooter } = require("./scooters");
 
 // Users can hire scooters from a hiring station and return them later.
 //  Users can only hire electric scooters if they are charged.
@@ -8,15 +8,23 @@ const Scooter = require("./scooters");
 
 describe("Hiring Station test", () => {
   test("checking the location", () => {
-    //Assign
+    //Arrange
     let Dagenham = new HiringStation("Dagenham");
     //Assert
     expect(Dagenham.location).toEqual("Dagenham");
   });
   test("checking allScooter", () => {
+    // Arrange
+    // 1. first create the HiringStation and Scooter
+    let dagenham = new HiringStation("Dagenham");
+    let vision = new Scooter("Violet Vision");
     //Act
-    // console.log(HiringStation.allScooter);
-    let blueVision = new Scooter("Blue Vision");
-    console.log(HiringStation.userHiring);
+    // connect vision to hiring station Dagenham
+    dagenham.userHiring(vision);
+    // console.log(vision);
+    // console.log(dagenham);
+    // Assert
+    expect(dagenham.location).toEqual("Dagenham");
+    expect(vision.model).toBe("Violet Vision");
   });
 });

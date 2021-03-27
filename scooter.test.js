@@ -1,10 +1,15 @@
-const Scooter = require("./scooters");
+const { Scooter, MScooter, EScooter } = require("./scooters");
 
 describe("checking scooter", () => {
   test("checking if model is works", () => {
-    //asign
+    //arrange
     let blueVision = new Scooter("Blue Vision");
+    //Act
     //Assert
     expect(blueVision.model).toEqual("Blue Vision");
   });
 });
+
+// scooter avaliable and not
+// - two states - boleen value - toggle the avaliabilty
+//- grab the scooter and avaliabity -  change it state
