@@ -1,4 +1,3 @@
-const { Scooter, MScooter, EScooter } = require("./scooters");
 //Each hiring station should have a location.
 // Hiring stations have an inventory of scooters.
 
@@ -7,7 +6,7 @@ class HiringStation {
     this.location = location;
     this.scooters = [];
   }
-  userHiring(scooter) {
+  returnScooter(scooter) {
     this.scooters.push(scooter);
   }
 }

@@ -1,5 +1,4 @@
-const { User } = require("./users");
-const { Scooter, MScooter, EScooter } = require("./scooters");
+const { Scooter, EScooter } = require("../scooters");
 
 describe("user testing", () => {
   test("checking if electric scooter recognised", () => {
@@ -16,12 +15,21 @@ describe("user testing", () => {
   });
   test("checking manual scooter is working", () => {
     // Arrange
-    let captain = new MScooter("Captain", "mScooter");
+    let captain = new Scooter("Captain", "mScooter");
     // console.log(captain);
     //Act
     //Assert
-    expect(captain instanceof MScooter).toBeTruthy();
+    expect(captain.model).toBeTruthy();
   });
   test("returning of the scooter", () => {});
 });
 //charging refer to the settimeout function
+
+// - not separated into src/tests
+// - scooter class is confused (code not really re-used)
+// - Scooter's userScooter doesn't work
+// - scooters imported to hiring station and User but not used
+// - inconsistent file naming
+// - be nice if User had a scooter property
+// - better test coverage would be nice
+// - should test whether userHiring actually pushes scooter

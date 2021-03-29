@@ -1,5 +1,5 @@
-const HiringStation = require("./Hiring-station");
-const { Scooter, MScooter, EScooter } = require("./scooters");
+const HiringStation = require("../Hiring-station");
+const { Scooter, MScooter, EScooter } = require("../scooters");
 
 // Users can hire scooters from a hiring station and return them later.
 //  Users can only hire electric scooters if they are charged.
